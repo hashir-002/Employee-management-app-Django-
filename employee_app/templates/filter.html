@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Management Systen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Filter employee <details></details></h1>
+        <hr>
+        <form class="container shadow" action="/filter-emp" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="first_name" class="form-label">Employee First/Last Name</label>
+            <input type="text" class="form-control" id="name" value="{{name}}" name="name" aria-describedby="emailHelp">
+          </div>  
+
+           <div class="mb-3">
+            <label for="dept" class="form-label">Department</label>
+            <input type="text" class="form-control" value="{{dept}}" name="dept" id="dept">
+           </div>
+           <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" class="form-control" value="{{role}}" name="role" id="role">
+           </div>
+          
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
